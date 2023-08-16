@@ -1,38 +1,67 @@
-.App {
-  text-align: center;
+*{
+	--var-Color: rgb(0, 247, 255);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.game{
+	background-color: #242424;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	flex-direction: column;
+	gap: 0.5rem;
+	user-select: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.box{
+	color: antiquewhite;
+	border: 0.3rem solid var(--var-Color);
+	display: grid;
+	grid-template-rows: repeat(3, 6.5rem);
+	grid-template-columns: repeat(3, 6.5rem);
+	gap: 0.01rem;
+	place-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.square{
+	border: 0.05rem solid var(--var-Color);
+	color: var(--var-Color);
+	width: 6rem;
+	height: 6rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font: bold 2rem monospace;
 }
 
-.App-link {
-  color: #61dafb;
+.square:hover{
+	cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.status {
+	color: var(--var-Color);
+	font: bold 2rem monospace;
+	display: grid;
+	grid-area: 1/1/2/4;
+}
+
+.stats{
+	color: var(--var-Color);
+	font: bold 1.5rem monospace;
+	border: 1.5px solid var(--var-Color);
+	width: 10rem;
+	height: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.statsholder{
+	width: 20rem;
+	display: flex;
+}
+
+.stats:hover{
+	cursor: pointer;
 }
