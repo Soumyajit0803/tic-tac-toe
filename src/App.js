@@ -2,7 +2,6 @@ import './App.css';
 import {useState} from 'react';
 
 function ClickBox({value, onBoxClick}){
-
 	return (
 		<div className='square' onClick = {onBoxClick}>{value}</div>
 	)
@@ -80,11 +79,13 @@ export default function App(){
 	const [hist, setHist] = useState([Array(9).fill(null)]);
 	const marker = currmove%2===0;
 	const currBoard = hist[currmove];
+	console.log(hist);
 
 	function controlGame(board){
 		const newHist = [...hist.slice(0, currmove+1), board]
 		setHist(newHist);
 		setCurrmove(newHist.length-1);
+		// console.log(hist)
 	}
 
 	function jumpTo(nextMove){
