@@ -1,17 +1,30 @@
 *{
 	--var-Color: rgb(0, 247, 255);
 }
+body{
+	background-color: #242424;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	flex-direction: column;
 
+}
 .game{
 	background-color: #242424;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 100vw;
-	height: 100vh;
+	width: max-content;
+	height: max-content;
 	flex-direction: column;
 	gap: 0.5rem;
 	user-select: none;
+}
+
+.gamepage{
+	display: flex;
 }
 
 .box{
@@ -55,13 +68,20 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 1rem;
+	
 }
 
 .statsholder{
-	width: 20rem;
+	width: 15rem;
 	display: flex;
+	flex-direction: column;
 }
 
 .stats:hover{
 	cursor: pointer;
+}
+
+.history{
+	color: var(--var-Color);
 }

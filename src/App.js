@@ -34,23 +34,20 @@ function getWinner(matchBoard){
 	return boardFull?"Draw":null;
 }
 
-function App() {
+function Game({marker,board,handlePlay}) {
 
-	const [board, setBoard] = useState(Array(9).fill(null));
+	// const [board, setBoard] = useState(Array(9).fill(null));
 
-	const [marker, setmarker] = useState(true);
+	// const [marker, setmarker] = useState(true);
 
 	function update(i){
 		if(board[i] || getWinner(board))return;
 
 		const newBoard = board.slice();
 		newBoard[i] = marker?"X":"O";
-		setmarker(!marker);
-		setBoard(newBoard);
-	}
-
-	function onRestart(){
-		setBoard(Array(9).fill(null));
+		// setmarker(!marker);
+		// setBoard(newBoard);
+		handlePlay(newBoard);
 	}
 
 	const winner = getWinner(board);
@@ -74,15 +71,47 @@ function App() {
 				<ClickBox value = {board[8]} onBoxClick={()=>update(8)}/>
 			</div>
 			
-			<div className='statsholder'>
-				<div className='stats' onClick={onRestart}>restart</div>
-				<div className='stats'>undo</div>
-			</div>
-			
 		</div>
 	)
 }
 
+export default function App(){
+	const [currmove, setCurrmove] = useState(0);
+	const [hist, setHist] = useState([Array(9).fill(null)]);
+	const marker = currmove%2===0;
+	const currBoard = hist[currmove];
 
+	function controlGame(board){
+		const newHist = [...hist.slice(0, currmove+1), board]
+		setHist(newHist);
+		setCurrmove(newHist.length-1);
+	}
 
-export default App;
+	function jumpTo(nextMove){
+		setCurrmove(nextMove);
+	}
+
+	const moves = hist.map((elm, idx)=>{
+		let text;
+		text = idx>0?"go to move #"+idx:"go to game start";
+		return (
+			<li key = {idx}>
+				<button onClick={()=>jumpTo(idx)}>{text}</button>
+			</li>
+		)
+	})
+
+	return (
+		<div className="gamepage">
+			<Game marker = {marker} board = {currBoard} handlePlay = {controlGame} />
+						
+			<div className='statsholder'>
+				<div className='stats'>restart</div>
+				<div className='stats'>undo</div>
+			</div>
+			<div className='history'>
+				<ol>{moves}</ol>
+			</div>
+		</div>
+	)
+}
