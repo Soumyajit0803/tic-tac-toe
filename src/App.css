@@ -25,6 +25,7 @@ body{
 
 .gamepage{
 	display: flex;
+	/* flex-direction: column; */
 }
 
 .box{
@@ -59,7 +60,7 @@ body{
 	grid-area: 1/1/2/4;
 }
 
-.stats{
+.stats, .scoreboard{
 	color: var(--var-Color);
 	font: bold 1.5rem monospace;
 	border: 1.5px solid var(--var-Color);
