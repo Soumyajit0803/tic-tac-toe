@@ -1,6 +1,4 @@
-*{
-	--var-Color: rgb(0, 247, 255);
-}
+
 body{
 	background-color: #242424;
 	display: flex;
@@ -9,8 +7,30 @@ body{
 	width: 100vw;
 	height: 100vh;
 	flex-direction: column;
-
 }
+
+.winningBox{
+	background-color: green;
+}
+
+.gamepage{
+	display: grid;
+	grid-template-columns: 20rem 10rem;
+	grid-template-rows: 3rem 9rem 10rem ;
+	gap: 1rem;
+	border: 0.5rem double rgb(255, 166, 0);
+	padding: 1rem;
+	border-radius: 1rem;
+}
+
+.status {
+	color: rgb(255, 213, 0);
+	font: bold 2rem monospace;
+	display: grid;
+	grid-area: 1/1/2/3;
+	justify-content: center;
+}
+
 .game{
 	background-color: #242424;
 	display: flex;
@@ -21,16 +41,13 @@ body{
 	flex-direction: column;
 	gap: 0.5rem;
 	user-select: none;
+	grid-area: 2/1/4/2;
 }
 
-.gamepage{
-	display: flex;
-	/* flex-direction: column; */
-}
 
 .box{
-	color: antiquewhite;
-	border: 0.3rem solid var(--var-Color);
+	border: 0.3rem solid greenyellow;
+	border-radius: 1rem;
 	display: grid;
 	grid-template-rows: repeat(3, 6.5rem);
 	grid-template-columns: repeat(3, 6.5rem);
@@ -39,50 +56,47 @@ body{
 }
 
 .square{
-	border: 0.05rem solid var(--var-Color);
-	color: var(--var-Color);
+	border: 0.05rem solid greenyellow;
+	color: yellow;
 	width: 6rem;
 	height: 6rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font: bold 2rem monospace;
+	font: bold 3rem "ubuntu";
 }
 
 .square:hover{
 	cursor: pointer;
 }
 
-.status {
-	color: var(--var-Color);
-	font: bold 2rem monospace;
-	display: grid;
-	grid-area: 1/1/2/4;
-}
-
 .stats, .scoreboard{
-	color: var(--var-Color);
+	color: greenyellow;
 	font: bold 1.5rem monospace;
-	border: 1.5px solid var(--var-Color);
-	width: 10rem;
-	height: 5rem;
+	border: 1.5px solid greenyellow;
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	margin: 1rem;
+	align-items:center;
+	flex-direction: column;
+	border-radius: 1rem;
 	
 }
 
+.scoreboard{
+	grid-area: 2/2/3/3;
+}
+
+.stats{
+	height: 2.5rem;
+}
+
 .statsholder{
-	width: 15rem;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-around;
+	grid-area: 3/2/4/3;
 }
 
 .stats:hover{
 	cursor: pointer;
-}
-
-.history{
-	color: var(--var-Color);
 }
