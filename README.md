@@ -1,8 +1,6 @@
 # A Simple `TIC-TAC-TOE` Game created using `create-react-app`
 
 ## Game Page 
-* *Screenshot*
-![screenshot](./Tic-Tac-Toe.png)
 
 * *Game In Action*
 ![Video](./tictactoe-play.gif)
