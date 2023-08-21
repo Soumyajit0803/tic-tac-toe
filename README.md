@@ -5,7 +5,7 @@
 ![Video](./tictactoe-play.gif)
 
 ## Idea For The Project :bulb::grinning:
- A big thanks :gift_heart: to React official website's [Tutorial](https://react.dev/learn/tutorial-tic-tac-toe) on how to build a `tic-tac-toe` game, for learning purpose.
+ A big thanks :gift_heart: to React official website's [Tutorial](https://react.dev/learn/tutorial-tic-tac-toe) on how to build a `tic-tac-toe` game.
 
 ## Features :sparkles::nerd_face:
 This project, although created with the help of tutorial, contains some extended features: 
