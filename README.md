@@ -1,8 +1,7 @@
 # A Simple `TIC-TAC-TOE` Game created using `create-react-app`
 
-## Game Page 
+## Game Page In Action :gem: :blush:
 
-* *Game In Action*
 ![Video](./tictactoe-play.gif)
 
 ## Idea For The Project :bulb::grinning:
